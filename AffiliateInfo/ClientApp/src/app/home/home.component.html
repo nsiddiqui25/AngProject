@@ -1,0 +1,199 @@
+<h4 class="containerTitle">
+  Additional Entities
+</h4>
+<div class="row noPrint">
+  <div class="col-12">
+    <button class="btn btn-success float-right" type="button" (click)="onSaveCloseClick()">Save & Close</button>
+  </div>
+</div>
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()" (submit)="submitForm()">
+  <ng-container>
+    <div class="row" style="margin-top: 15px;" formArrayName="corpOwners">
+      <div class="col-12">
+        <h5>Please provide the ownership of the Corporation</h5>
+        <table mat-table [dataSource]="dataSourceCorpOwner" style="width: 100%;" class="mat-elevation-z2">
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef style="font-size: 0.9em; font-weight: bold;" class="">
+              <button mat-icon-button type="button" class="text-success float-right noPrint" color="primary"
+                      (click)="addCorpOwners()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <button mat-icon-button class="text-danger float-right noPrint" type="button" color="primary"
+                      (click)="removeCorpOwners(i)" *ngIf="dataSourceCorpOwner.data.length>1">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="nameOfCorp">
+            <th mat-header-cell *matHeaderCellDef style="font-size: 0.9em; font-weight: bold;"> Name of the Corporation Owners </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <div [formGroupName]="i">
+                <input type="hidden" name="CorpOwnerId" [value]="service.formData." />
+                <input type="text" formControlName="corpOwnerName" class="noBorder"
+                       #corpOwnerNameField (keydown.enter)="checkIfAddNewCorpOwner(i)"
+                       placeholder=" Enter Owner's Name"
+                       [class.invalid]="form.controls.corpOwners['controls'][i].controls.corpOwnerName.invalid && isSubmittedForm" />
+              </div>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="percentOwnership">
+            <th mat-header-cell *matHeaderCellDef style="font-size: 0.9em; font-weight: bold;max-width: 100px; padding-left: 15px"> % of ownership </th>
+            <td mat-cell *matCellDef="let element; let i = index" style="max-width: 100px">
+              <div [formGroupName]="i" style="padding-left: 10px;">
+                <input type="text" formControlName="percentOwnership" class="noBorder"
+                       (keydown.enter)="checkIfAddNewCorpOwner(i)"
+                       placeholder=" % of ownership " OnlyNumeric
+                       [class.invalid]="form.controls.corpOwners['controls'][i].controls.percentOwnership.invalid && isSubmittedForm" />
+              </div>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="disclaimer" style="height: 15px">
+            <td mat-footer-cell *matFooterCellDef style="padding-left: 10px" class="text-danger" floatLabel="never">
+              Please fill all empty rows
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="incorrectPercent" style="height: 15px">
+            <td mat-footer-cell *matFooterCellDef style="padding-left: 10px" class="text-danger" floatLabel="never">
+              <span [class.text-white]="!form.controls.corpOwners.hasError('incorrectPercentSum')">Total sum should be between 95.0% to 100.00%.</span>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-footer-row *matFooterRowDef="['disclaimer', 'incorrectPercent']"
+              [class.no-display]="form.controls.corpOwners.valid"></tr>
+        </table>
+      </div>
+    </div>
+
+    <div formArrayName="aditionalEntities" style="margin-top: 20px;" class="pbPage">
+      <mat-accordion [multi]="true">
+        <mat-expansion-panel *ngFor="let entity of form.controls.aditionalEntities.controls; let i = index;" [expanded]="entity.value.isExpanded" hideToggle
+                             (opened)="setIsExpanded(i,true)" (closed)="setIsExpanded(i,false)" style="margin-top: 5px;">
+          <mat-expansion-panel-header style="background-color: rgba(238, 238, 238, 0.5); border-radius: 0">
+            <mat-panel-title [matTooltip]="entity.value.isExpanded? 'Collapse': 'Expand'"
+                             matTooltipClass="font-2x" matTooltipPosition="above">
+              <h5 style="width: 100%; margin-top: 8px;">
+                Additional Entity {{i+1}}
+                <mat-icon class="float-right text-danger noPrint" style="cursor: pointer;" *ngIf="form.controls.aditionalEntities.controls.length!=1"
+                          (click)="removeAditionalEntity(i)">cancel</mat-icon>
+                <mat-icon class="float-right text-primary noPrint" *ngIf="entity.controls.isExpanded.value" style="cursor: pointer;">indeterminate_check_box</mat-icon>
+                <mat-icon class="float-right text-primary noPrint" *ngIf="!entity.controls.isExpanded.value" style="cursor: pointer;">add_box</mat-icon>
+              </h5>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div [formGroupName]="i">
+            <div class="row">
+              <div class="col-12">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Legal Name" formControlName="legalName" type="text" required>
+                  <mat-error *ngIf="entity.controls.legalName.hasError('required')">
+                    Legal Name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Zip Code" formControlName="zipCode" type="text" required>
+                  <mat-error *ngIf="entity.controls.zipCode.hasError('required')">
+                    Zip Code is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-12" style="margin-top: 10px;">
+                <mat-form-field class="full-width">
+                  <mat-chip-list #chipList formControlName="dba">
+                    <mat-chip *ngFor="let dbaEl of entity.value.dba" (removed)="removeDBA(dbaEl,i)" [removable]="true">
+                      {{dbaEl}}
+                      <mat-icon matChipRemove class="noPrint">cancel</mat-icon>
+                    </mat-chip>
+                    <input placeholder="Enter each DBA name separated by semi-colon"
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           [matChipInputAddOnBlur]="true"
+                           (matChipInputTokenEnd)="addDBA($event, i)">
+                  </mat-chip-list>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row" formArrayName="AditEntcorpOwners">
+              <div class="col-12" style="margin-top: 20px;">
+                <table mat-table [dataSource]="dataSourceAditionalEntArr[i]" style="width: 100%" class="mat-elevation-z2">
+                  <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef style="font-size: 1em; font-weight: bold;">
+                      <button mat-icon-button type="button" class="text-success float-right noPrint"
+                              color="primary" (click)="addNewAditionalEntRow(i)">
+                        <mat-icon>add</mat-icon>
+                      </button>
+                    </th>
+                    <td mat-cell *matCellDef="let element; let j = index">
+                      <button mat-icon-button class="text-danger float-right noPrint" *ngIf="dataSourceAditionalEntArr[i].data.length>1" type="button"
+                              color="primary" (click)="deleteAditionalEntRow(i,j)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="nameOfCorp">
+                    <th mat-header-cell *matHeaderCellDef style="font-size: 1em; font-weight: bold;"> Name(s) of the Additional Entity’s Owner(s) </th>
+                    <td mat-cell *matCellDef="let element; let j = index">
+                      <div [formGroupName]="j">
+                        <input type="text" formControlName="corpOwnerName" class="noBorder"
+                               placeholder=" Enter Owner's Name" #corpOwnerEntityNameField
+                               id={{i}}
+                               [class.invalid]="form.controls.aditionalEntities['controls'][i].controls.AditEntcorpOwners.controls[j].controls.corpOwnerName.invalid && isSubmittedForm"
+                               (keydown.enter)="checkIfAddNewAditionalEntiyRow(i,j)" />
+                      </div>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="percentOwnership">
+                    <th mat-header-cell *matHeaderCellDef style="font-size: 0.9em; font-weight: bold;max-width: 100px; padding-left: 15px"> % of ownership </th>
+                    <td mat-cell *matCellDef="let element; let j = index" style="max-width: 100px">
+                      <div [formGroupName]="j">
+                        <input type="text" class="noBorder" formControlName="percentOwnership" style="padding-left: 15px;"
+                               placeholder=" % of ownership " OnlyNumeric
+                               [class.invalid]="form.controls.aditionalEntities['controls'][i].controls.AditEntcorpOwners.controls[j].controls.percentOwnership.invalid && isSubmittedForm"
+                               (keydown.enter)="checkIfAddNewAditionalEntiyRow(i,j)" />
+                      </div>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="disclaimer" style="height: 15px">
+                    <td mat-footer-cell *matFooterCellDef style="padding-left: 10px" class="text-danger">
+                      <span [class.text-white]="entity.controls.AditEntcorpOwners.valid">Please fill all empty rows</span>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="incorrectPercent" style="height: 15px">
+                    <td mat-footer-cell *matFooterCellDef style="padding-left: 10px" class="text-danger" floatLabel="never">
+                      <span [class.text-white]="!entity.controls.AditEntcorpOwners.hasError('incorrectPercentSum')">Total sum should be between 95.0% to 100.00%.</span>
+                    </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  <tr mat-footer-row *matFooterRowDef="['disclaimer', 'incorrectPercent']" [class.no-display]="entity.controls.AditEntcorpOwners.valid "></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </ng-container>
+
+  <div class="row noPrint" style="margin-top: 30px;">
+    <div class="col-12">
+
+      <button class="btn btn-success float-right" type="button" (click)="onSaveCloseClick()">Save & Close</button>
+      <button class="btn btn-primary float-right" style="margin-right: 10px;" type="button" (click)="addAditionalEntity()" [disabled]="AdditionalEnt.length>=30">
+        Add Entity
+      </button>
+    </div>
+  </div>
+</form>
+
+<!--<p>
+  {{//values.corpOwner[0].ownerName}}
+</p>-->

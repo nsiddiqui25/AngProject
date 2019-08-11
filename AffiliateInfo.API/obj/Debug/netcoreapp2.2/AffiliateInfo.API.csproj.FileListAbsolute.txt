@@ -1,0 +1,17 @@
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\AffiliateInfo.API.deps.json
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\AffiliateInfo.API.runtimeconfig.json
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\AffiliateInfo.API.runtimeconfig.dev.json
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\AffiliateInfo.API.dll
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\DataRepository.dll
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\DataRepository.pdb
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.csprojAssemblyReference.cache
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.csproj.CoreCompileInputs.cache
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.RazorAssemblyInfo.cache
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.RazorAssemblyInfo.cs
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.AssemblyInfoInputs.cache
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.AssemblyInfo.cs
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.RazorTargetAssemblyInfo.cache
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.csproj.CopyComplete
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\bin\Debug\netcoreapp2.2\AffiliateInfo.API.pdb
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.dll
+C:\XDRIVE\IT_Projects\ELD_PLD\DEVELOPMENT\InternalWebApplication\AffiliateInfo\AffiliateInfo.API\obj\Debug\netcoreapp2.2\AffiliateInfo.API.pdb

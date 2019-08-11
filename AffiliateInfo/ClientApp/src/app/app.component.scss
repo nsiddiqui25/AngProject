@@ -1,0 +1,23 @@
+
+.containerTitle {
+  margin-bottom: 25px;
+  margin-top: 50px;
+  /* padding-top: 30px; */
+  background-color: #c2c2de;
+  text-align: center;
+  padding: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  border-radius: 8px 8px 0 0;
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: 0;
+    margin-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}

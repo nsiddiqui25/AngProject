@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+.example-full-width {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: rgba(19, 25, 69, 0.84);
+}
+
+
+.radio-button {
+  padding-left: 10px;
+
+  & label {
+    margin-bottom: 1px;
+  }
+}
+
+.font-2x {
+  font-size: 100%;
+}
+
+.mat-radio-label {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+button:active, button:focus {
+  outline: none !important;
+}
+
+
+.enableIconMenu {
+  height: 40px;
+  margin-left: 5px;
+  padding-bottom: 10px;
+}
+
+
+table, table td {
+  border-collapse: separate;
+}
+
+.nextBtn {
+  padding-top: 0px;
+}
+
+.mat-iconInsideBtn {
+  position: relative !important;
+  top: 6px !important;
+}
+
+.printIcon {
+  height: 35px;
+  width: 35px;
+  float: right;
+  font-size: 27px;
+}
+
+
+
+/*.mat-chip-list-wrapper .mat-standard-chip, .mat-chip-list-wrapper input.mat-input-element {
+  margin: 4px;
+}*/
+
+
+.mat-standard-chip.mat-chip-with-trailing-icon {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-right: 6px !important;
+  padding-left: 6px !important;
+}
+
+.mat-standard-chip[_ngcontent-c9] {
+  border-radius: 10px;
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: white;
+  color: rgba(75, 74, 74, 0.87);
+  border: 1px solid #6e6e6e;
+  font-weight: 700;
+}
+
+
+
+.noBorder {
+  border: none;
+  outline: none;
+  width: calc(100% - 10px );
+}
