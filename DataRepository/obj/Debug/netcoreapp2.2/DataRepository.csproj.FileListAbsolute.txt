@@ -1,0 +1,9 @@
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\bin\Debug\netcoreapp2.2\DataRepository.deps.json
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\bin\Debug\netcoreapp2.2\DataRepository.dll
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\obj\Debug\netcoreapp2.2\DataRepository.csprojAssemblyReference.cache
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\obj\Debug\netcoreapp2.2\DataRepository.csproj.CoreCompileInputs.cache
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\obj\Debug\netcoreapp2.2\DataRepository.AssemblyInfoInputs.cache
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\obj\Debug\netcoreapp2.2\DataRepository.AssemblyInfo.cs
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\bin\Debug\netcoreapp2.2\DataRepository.pdb
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\obj\Debug\netcoreapp2.2\DataRepository.dll
+C:\Users\nsiddiqui\source\repos\AngProject\DataRepository\obj\Debug\netcoreapp2.2\DataRepository.pdb

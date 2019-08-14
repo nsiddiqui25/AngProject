@@ -1,0 +1,8 @@
+﻿Scaffold-DbContext "Server=ELDSQL02t;Database=ELD_PRODUCTION_NXT;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models/ELD/Prod -Tables eld_Users,BROKER_CONTACT,BROKER_LICENSE,BROKER_MASTER,WebQuoteUsers,SS_Permission,SS_EldUser_Role,SS_Role,SS_Role_Permission,ACCT_MASTER,ACCT_TRANS,AR_TRANS,CLM_MASTER,CLM_TRANS,INSURED_INFO,lkpSUBMISSION_STATUS -Force
+
+Affiliate-Info ELD Script
+Scaffold-DbContext "Server=ELDSQL02t;Database=ELD_PRODUCTION_NYS;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models/ELD/Prod1 -Tables CorpOwner,AdditionalEntity,AdditionalEntityOwner -Force
+
+
+PLD Script
+Scaffold-DbContext "Server=ELDSQL02t;Database=PLD_PRODUCTION;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models/PLD/Prod -Tables BR_MERGE,BROKER_AGENT,BROKER_CONTACT,BROKER_LICENSE,BROKER_MASTER,eld_Users,IDENTITY_VALUES,log4netERROR_LOG,NON_IDENTITY_VALUES,WebQuoteUserPreference,WebQuoteUsers,lkp_State_Region,SS_EldUser_Role,SS_Permission,SS_Role,SS_Role_Permission -Force

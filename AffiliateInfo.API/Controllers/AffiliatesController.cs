@@ -39,24 +39,41 @@ namespace AffiliateInfo.API.Controllers
 
             return new DataAccess.AffiliateInfo
             {
-                CorpOwner = corpOwners,
-                AdditionalEntity = additionalEnitities
+                CorpOwners = corpOwners,
+                AdditionalEntities = additionalEnitities
             };
         }
 
         [HttpPut]
         public void Put(DataAccess.AffiliateInfo affiliateInfo)
         {
-            _ctx.UpdateRange(affiliateInfo.CorpOwner);
-            _ctx.UpdateRange(affiliateInfo.AdditionalEntity);
-            foreach (var additionalEntity in affiliateInfo.AdditionalEntity)
+            foreach (var corpOwner in affiliateInfo.CorpOwners)
             {
-                foreach (var owner in additionalEntity.AdditionalEntityOwner)
+                if ((corpOwner.CorpOwnerName == null) && (corpOwner.CorpOwnerPercent == null))
                 {
-                    if (owner.OwnerName == null && owner.OwnerPercent == null)
-                        _ctx.Remove(owner);
+                    _ctx.Remove(corpOwner);
                 }
             }
+            foreach (var additionalEntity in affiliateInfo.AdditionalEntities)
+            {
+                if ((additionalEntity.LegalName == null) && (additionalEntity.Dbaname == null) && (additionalEntity.Zip == null))
+                {
+                    _ctx.Remove(additionalEntity);
+                }
+            }
+            foreach (var additionalEntity in affiliateInfo.AdditionalEntities)
+            {
+                foreach (var entityOwner in additionalEntity.AdditionalEntityOwner)
+                {
+                    if ((entityOwner.OwnerName == null) && (entityOwner.OwnerPercent == null))
+                    {
+                        _ctx.Remove(entityOwner);
+                    }
+                }
+            }
+
+            _ctx.UpdateRange(affiliateInfo.CorpOwners);
+            _ctx.UpdateRange(affiliateInfo.AdditionalEntities);
             _ctx.SaveChanges();
         }
     }

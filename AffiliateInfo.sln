@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AffiliateInfo.UI", "AffiliateInfo\AffiliateInfo.UI.csproj", "{7FB0739B-1892-472E-A7FD-92DF2AC83FA1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AffiliateInfo.API", "AffiliateInfo.API\AffiliateInfo.API.csproj", "{4859B161-AAB5-464B-A5BA-8FDD43EFB890}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepository", "..\DataRepository-AffiliateInfo\DataRepository.csproj", "{9313E8DF-8839-41BD-BD5E-294E8262FBA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AffiliateInfo.UI", "AffiliateInfo.UI\AffiliateInfo.UI.csproj", "{8DC66784-BBA5-4BB0-B9AF-FF3A8AA90136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepository", "DataRepository\DataRepository.csproj", "{8CA69DF8-6DA7-410F-BF70-33B3B45C46A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,38 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7FB0739B-1892-472E-A7FD-92DF2AC83FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FB0739B-1892-472E-A7FD-92DF2AC83FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FB0739B-1892-472E-A7FD-92DF2AC83FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FB0739B-1892-472E-A7FD-92DF2AC83FA1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4859B161-AAB5-464B-A5BA-8FDD43EFB890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4859B161-AAB5-464B-A5BA-8FDD43EFB890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4859B161-AAB5-464B-A5BA-8FDD43EFB890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4859B161-AAB5-464B-A5BA-8FDD43EFB890}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9313E8DF-8839-41BD-BD5E-294E8262FBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9313E8DF-8839-41BD-BD5E-294E8262FBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9313E8DF-8839-41BD-BD5E-294E8262FBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9313E8DF-8839-41BD-BD5E-294E8262FBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC66784-BBA5-4BB0-B9AF-FF3A8AA90136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC66784-BBA5-4BB0-B9AF-FF3A8AA90136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC66784-BBA5-4BB0-B9AF-FF3A8AA90136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC66784-BBA5-4BB0-B9AF-FF3A8AA90136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA69DF8-6DA7-410F-BF70-33B3B45C46A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA69DF8-6DA7-410F-BF70-33B3B45C46A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA69DF8-6DA7-410F-BF70-33B3B45C46A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA69DF8-6DA7-410F-BF70-33B3B45C46A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E004E3DC-0BD6-4A72-B114-0864F70A45F1}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://eldtf01:8080/tfs/tfs%20primary%20collection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = AffiliateInfo.API\\AffiliateInfo.API.csproj
-		SccProjectName1 = AffiliateInfo.API
-		SccLocalPath1 = AffiliateInfo.API
-		SccProjectUniqueName2 = AffiliateInfo\\AffiliateInfo.UI.csproj
-		SccProjectName2 = AffiliateInfo
-		SccLocalPath2 = AffiliateInfo
-		SccProjectUniqueName3 = ..\\DataRepository-AffiliateInfo\\DataRepository.csproj
-		SccProjectName3 = ../DataRepository-AffiliateInfo
-		SccLocalPath3 = ..\\DataRepository-AffiliateInfo
 	EndGlobalSection
 EndGlobal

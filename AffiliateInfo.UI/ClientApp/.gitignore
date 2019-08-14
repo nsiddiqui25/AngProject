@@ -1,0 +1,70 @@
+root = true
+
+[*]
+
+# insert final newline upon saving file
+insert_final_newline = true
+
+# remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = true
+
+[*.cs]
+
+# prefer objects to not be initialized using object initializers
+dotnet_style_object_initializer = false
+
+# private fields should be _camelCase
+dotnet_naming_rule.camel_case_for_private_fields.severity = suggestion
+dotnet_naming_rule.camel_case_for_private_fields.symbols  = private_fields
+dotnet_naming_rule.camel_case_for_private_fields.style    = camel_case_underscore_style
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_style.camel_case_underscore_style.required_prefix = _
+dotnet_naming_style.camel_case_underscore_style.capitalization = camel_case
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db

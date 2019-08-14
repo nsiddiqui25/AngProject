@@ -7,8 +7,8 @@ namespace AffiliateInfo.API.DataAccess
     {
         public int MasterSheetId { get; set; }
 
-        public ICollection<CorpOwner> CorpOwner { get; set; } = new List<CorpOwner>();
+        public ICollection<CorpOwner> CorpOwners { get; set; } = new List<CorpOwner>();
 
-        public ICollection<AdditionalEntity> AdditionalEntity { get; set; } = new List<AdditionalEntity>();
+        public ICollection<AdditionalEntity> AdditionalEntities { get; set; } = new List<AdditionalEntity>();
     }
 }
